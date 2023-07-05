@@ -1,0 +1,3 @@
+Circle(p=Point(dims=2, x=(100.0, 0.0)), r=100,00)
+Segment(start=Point(dims=2, x=(0.0, 0.0)), finish=Point(dims=2, x=(-100.0, -100.0)))
+Trapeze(n=4, p=(Point(dims=2, x=(-10.0, 40.0)), Point(dims=2, x=(50.0, 90.0)), Point(dims=2, x=(20.0, 0.0)), Point(dims=2, x=(0.0, 20.0))))

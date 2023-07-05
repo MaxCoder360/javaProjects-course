@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+    id "io.franzbecker.gradle-lombok" version '5.0.0'
+}
+
+javafx {
+    version = "18"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.swing' ]
+}
+
+lombok {
+	version = '1.18.4'
+	sha256 = ""
+}
+
+mainClassName = 'ui.Main'
+
+dependencies {
+    implementation project(':data-module')
+}

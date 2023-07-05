@@ -1,0 +1,33 @@
+subprojects {
+
+    apply plugin: 'application'
+    apply plugin: 'java'
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.mongodb:mongodb-driver-sync:4.1.2'
+        testImplementation 'junit:junit:4.12'
+        testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.8.2")
+    }
+
+    application {
+        mainClass = 'ui.Main'
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform() 
+    }
+
+}
+
+tasks.register('runUi') {
+    dependsOn ':data-module:build'
+    dependsOn ':data-module:test'
+    dependsOn ':presentation-module:build'
+    dependsOn ':presentation-module:run'
+}
+
+defaultTasks 'runUi'
